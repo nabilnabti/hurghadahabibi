@@ -114,7 +114,7 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Date input */}
+            {/* Date input — text par défaut, date au focus pour iOS */}
             <div className="flex-1 relative">
               <div className="absolute left-4 top-1/2 -translate-y-1/2 text-[#4AABE0] pointer-events-none">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -125,10 +125,14 @@ export default function HeroSection() {
                 </svg>
               </div>
               <input
-                type="date"
+                type={date ? "date" : "text"}
                 value={date}
+                placeholder="Date du séjour"
+                readOnly={!date}
+                onFocus={(e) => { e.currentTarget.type = "date"; e.currentTarget.readOnly = false; e.currentTarget.showPicker?.(); }}
+                onBlur={(e) => { if (!e.currentTarget.value) { e.currentTarget.type = "text"; e.currentTarget.readOnly = true; } }}
                 onChange={(e) => setDate(e.target.value)}
-                className="w-full h-14 pl-12 pr-4 bg-gray-50/80 text-gray-900 text-sm sm:text-base rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#4AABE0]/30 border border-gray-200/60 transition-all duration-300 hover:border-[#4AABE0]/30"
+                className="w-full h-14 pl-12 pr-4 bg-gray-50/80 text-gray-900 text-sm sm:text-base rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#4AABE0]/30 border border-gray-200/60 transition-all duration-300 hover:border-[#4AABE0]/30 cursor-pointer"
               />
             </div>
 
