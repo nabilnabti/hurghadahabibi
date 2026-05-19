@@ -1,7 +1,7 @@
 // Numéro WhatsApp du client — à remplacer quand il le fournira
-export const WHATSAPP_NUMBER = "";
-export const WHATSAPP_RESERVATIONS = "";
-export const WHATSAPP_MODIFICATIONS = "";
+export const WHATSAPP_NUMBER = "201556101611";
+export const WHATSAPP_RESERVATIONS = "201556101611";
+export const WHATSAPP_MODIFICATIONS = "201556101611";
 
 export function getWhatsAppUrl(message: string): string {
   if (!WHATSAPP_NUMBER) return "#";
