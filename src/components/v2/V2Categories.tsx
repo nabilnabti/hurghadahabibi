@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { v2Categories } from "@/data/v2-categories";
+import { getWhatsAppUrl } from "@/data/contact";
 
 export default function V2Categories() {
   return (
@@ -15,7 +16,9 @@ export default function V2Categories() {
           {v2Categories.map((category) => (
             <a
               key={category.id}
-              href={`#${category.id}`}
+              href={getWhatsAppUrl(`Bonjour, je suis interesse par vos experiences ${category.label} a Hurghada. Pouvez-vous me donner plus d'infos ?`)}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative aspect-[3/4] min-h-[280px] rounded-2xl overflow-hidden border-2 border-transparent hover:border-[#FFD700] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_8px_40px_rgba(255,215,0,0.25)]"
             >
               {/* Background image */}
