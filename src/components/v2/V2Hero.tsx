@@ -211,7 +211,7 @@ export default function V2Hero() {
             href="#experiences"
             className="group inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 bg-[#FFD700] text-black text-base sm:text-lg font-bold uppercase tracking-wider rounded-full hover:shadow-[0_0_40px_rgba(255,215,0,0.5)] hover:scale-105 active:scale-95 transition-all duration-300"
           >
-            D\u00C9COUVRIR NOS EXP\u00C9RIENCES
+            DÉCOUVRIR NOS EXPÉRIENCES
             <svg
               className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
               fill="none"
