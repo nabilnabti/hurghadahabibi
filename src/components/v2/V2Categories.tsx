@@ -12,14 +12,14 @@ export default function V2Categories() {
           NOS EXPÉRIENCES
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 md:gap-6">
           {v2Categories.map((category) => (
             <a
               key={category.id}
               href={getWhatsAppUrl(`Bonjour, je suis interesse par vos experiences ${category.label} a Hurghada. Pouvez-vous me donner plus d'infos ?`)}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative aspect-[3/4] min-h-[280px] rounded-2xl overflow-hidden border-2 border-transparent hover:border-[#FFD700] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_8px_40px_rgba(255,215,0,0.25)]"
+              className="group relative aspect-[3/4] min-h-[200px] sm:min-h-[280px] rounded-2xl overflow-hidden border-2 border-transparent hover:border-[#FFD700] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_8px_40px_rgba(255,215,0,0.25)]"
             >
               {/* Background image */}
               <Image

@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { destinations } from "@/data/activities";
 
 const categories = [
   { emoji: "\u{1F3D6}\uFE0F", label: "Plages" },
@@ -19,11 +21,22 @@ const trustBadges = [
 ];
 
 export default function V2Hero() {
+  const router = useRouter();
   const [mounted, setMounted] = useState(false);
+  const [destination, setDestination] = useState("");
+  const [date, setDate] = useState("");
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    const params = new URLSearchParams();
+    if (destination) params.set("destination", destination);
+    if (date) params.set("date", date);
+    router.push(`/recherche?${params.toString()}`);
+  };
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
@@ -109,6 +122,49 @@ export default function V2Hero() {
           </p>
           <div className="mt-3 mx-auto w-24 sm:w-32 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent rounded-full" />
         </div>
+
+        {/* Search form */}
+        <form
+          onSubmit={handleSearch}
+          className={`mt-8 sm:mt-10 w-full max-w-2xl transition-all duration-1000 delay-400 ${
+            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
+          <div className="flex flex-col sm:flex-row gap-3 bg-white/5 border border-[#FFD700]/20 backdrop-blur-md rounded-2xl sm:rounded-full p-3">
+            <div className="flex-1 relative">
+              <select
+                value={destination}
+                onChange={(e) => setDestination(e.target.value)}
+                className="w-full h-12 pl-4 pr-8 bg-white/10 text-white text-sm rounded-xl sm:rounded-full appearance-none border border-white/10 focus:outline-none focus:border-[#FFD700]/50"
+              >
+                <option value="" className="bg-[#1A1A1A]">Toutes les destinations</option>
+                {destinations.map((d) => (
+                  <option key={d.id} value={d.slug} className="bg-[#1A1A1A]">{d.name}</option>
+                ))}
+              </select>
+            </div>
+            <div className="flex-1 relative min-h-[48px]">
+              {!date && (
+                <span className="absolute inset-0 flex items-center pl-4 text-white/50 text-sm pointer-events-none z-10">
+                  Date du séjour
+                </span>
+              )}
+              <input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                className="absolute inset-0 w-full h-full pl-4 pr-4 bg-white/10 text-sm rounded-xl sm:rounded-full border border-white/10 focus:outline-none focus:border-[#FFD700]/50"
+                style={{ color: date ? "white" : "transparent", fontSize: "16px", colorScheme: "dark" }}
+              />
+            </div>
+            <button
+              type="submit"
+              className="h-12 px-8 bg-[#FFD700] text-black font-bold text-sm rounded-xl sm:rounded-full hover:shadow-[0_0_20px_rgba(255,215,0,0.4)] hover:scale-[1.02] active:scale-95 transition-all duration-300 cursor-pointer"
+            >
+              RECHERCHER
+            </button>
+          </div>
+        </form>
 
         {/* Category pills */}
         <div
