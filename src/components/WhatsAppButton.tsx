@@ -1,19 +1,25 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { getWhatsAppUrl } from "@/data/contact";
 
 const WHATSAPP_URL = getWhatsAppUrl("Bonjour, je souhaite réserver une activité");
 
 export default function WhatsAppButton() {
+  const pathname = usePathname();
   const [hovered, setHovered] = useState(false);
   const [mounted, setMounted] = useState(false);
 
+  // Cacher sur les pages activité (la barre mobile fait déjà office de CTA)
+  const isActivityPage = pathname.startsWith("/activite/");
+
   useEffect(() => {
-    // Trigger bounce-in animation after a short delay
     const timer = setTimeout(() => setMounted(true), 500);
     return () => clearTimeout(timer);
   }, []);
+
+  if (isActivityPage) return null;
 
   return (
     <>
