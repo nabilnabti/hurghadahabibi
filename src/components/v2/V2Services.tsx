@@ -36,12 +36,12 @@ export default function V2Services() {
           POURQUOI NOUS ?
         </h2>
 
-        {/* Horizontal scroll on mobile, 5-col grid on desktop */}
-        <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-5 md:overflow-visible md:pb-0">
+        {/* Grid: 2 cols mobile, 3 cols tablet, 5 cols desktop */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
           {services.map((service, i) => (
             <div
               key={i}
-              className="group min-w-[200px] flex-shrink-0 snap-center md:min-w-0 bg-[#1A1A1A] rounded-2xl p-6 border-t-2 border-[#FFD700] transition-all duration-400 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,215,0,0.2)]"
+              className={`group bg-[#1A1A1A] rounded-2xl p-5 sm:p-6 border-t-2 border-[#FFD700] transition-all duration-400 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,215,0,0.2)] ${i === services.length - 1 ? "col-span-2 sm:col-span-1 mx-auto w-full max-w-[250px] sm:max-w-none" : ""}`}
             >
               {/* Large emoji */}
               <div className="text-4xl mb-4">{service.icon}</div>
