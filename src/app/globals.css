@@ -329,6 +329,29 @@ body {
   display: none;
 }
 
+/* Fix date input iOS */
+input[type="date"] {
+  -webkit-appearance: none;
+  appearance: none;
+  min-height: 56px;
+  line-height: 56px;
+}
+
+input[type="date"]::-webkit-date-and-time-value {
+  text-align: left;
+  padding-left: 0;
+}
+
+/* Fix pour le placeholder invisible sur iOS */
+input[type="date"]:not(:valid)::-webkit-datetime-edit {
+  color: transparent;
+}
+
+input[type="date"]:focus::-webkit-datetime-edit,
+input[type="date"].has-value::-webkit-datetime-edit {
+  color: inherit;
+}
+
 /* Wave divider base */
 .wave-divider {
   position: absolute;
