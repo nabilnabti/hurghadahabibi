@@ -2,14 +2,9 @@
 
 import { useRef, useState } from "react";
 
-const videos = [
-  { src: "/videos/review-1.mp4", label: "Avis client" },
-  { src: "/videos/review-2.mp4", label: "Avis client" },
-  { src: "/videos/review-3.mp4", label: "Avis client" },
-  { src: "/videos/review-4.mp4", label: "Avis client" },
-  { src: "/videos/review-5.mp4", label: "Avis client" },
-  { src: "/videos/review-6.mp4", label: "Avis client" },
-];
+const videos = Array.from({ length: 46 }, (_, i) => ({
+  src: `/videos/review-${i + 1}.mp4`,
+}));
 
 export default function VideoReviews() {
   const scrollRef = useRef<HTMLDivElement>(null);
