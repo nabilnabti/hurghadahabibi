@@ -329,11 +329,24 @@ body {
   display: none;
 }
 
-/* Date input — iOS fix */
+/* Date input — iOS + desktop fix */
 input[type="date"] {
   -webkit-appearance: none;
   min-height: 56px;
   font-size: 16px !important;
+  position: relative;
+}
+
+/* Cache l'icône calendrier native */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
 }
 
 /* Wave divider base */
