@@ -3,6 +3,7 @@ import DestinationsSection from "@/components/DestinationsSection";
 import FeaturedActivities from "@/components/FeaturedActivities";
 import StatsSection from "@/components/StatsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import VideoReviews from "@/components/VideoReviews";
 import CTASection from "@/components/CTASection";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <FeaturedActivities />
       <StatsSection />
       <TestimonialsSection />
+      <VideoReviews />
       <CTASection />
     </main>
   );
