@@ -40,19 +40,19 @@ export default async function ActivityPage({
   const activity = getActivityBySlug(slug);
   if (!activity) notFound();
 
-  const whatsappMessage = `Bonjour Hurghada Habibi ! 👋
+  const whatsappMessage = `Bonjour Hurghada Habibi !
 
-Je souhaite réserver l'activité suivante :
+Je souhaite reserver l'activite suivante :
 
-🎯 *${activity.title}*
-📍 ${activity.location}
-⏱ Durée : ${activity.duration}
-💰 Prix : ${activity.price}€/pers.${activity.childPrice ? ` | Enfant : ${activity.childPrice}€` : ""}
+- *${activity.title}*
+- ${activity.location}
+- Duree : ${activity.duration}
+- Prix : ${activity.price}EUR/pers.${activity.childPrice ? ` | Enfant : ${activity.childPrice}EUR` : ""}
 
-📅 Date souhaitée : _à préciser_
-👥 Nombre de personnes : _à préciser_
+- Date souhaitee : a preciser
+- Nombre de personnes : a preciser
 
-Merci de me confirmer la disponibilité !`;
+Merci de me confirmer la disponibilite !`;
   const whatsappUrl = getWhatsAppUrl(whatsappMessage);
 
   // Gallery images: use gallery if available, otherwise use main image
