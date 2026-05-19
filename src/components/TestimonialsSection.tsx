@@ -227,12 +227,11 @@ export default function TestimonialsSection() {
 
                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                   <div className="flex items-center gap-3">
-                    <div
-                      className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-sm shrink-0"
-                      style={{ backgroundColor: avatarColors[i % avatarColors.length] }}
-                    >
-                      {t.name.split(" ").map(n => n[0]).join("")}
-                    </div>
+                    <img
+                      src={`https://api.dicebear.com/9.x/thumbs/svg?seed=${encodeURIComponent(t.name)}&backgroundColor=${avatarColors[i % avatarColors.length].replace("#", "")}`}
+                      alt={t.name}
+                      className="w-10 h-10 rounded-full shadow-sm shrink-0"
+                    />
                     <div>
                       <div className="font-semibold text-[#1A1A1A] text-sm">
                         {t.name}
