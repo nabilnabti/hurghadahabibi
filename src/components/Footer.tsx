@@ -146,7 +146,7 @@ export default function Footer() {
               <div className="mt-6 flex gap-4">
                 {/* Instagram */}
                 <a
-                  href="https://instagram.com/hurghadahabibi"
+                  href="https://www.instagram.com/hurghada.habibi/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
@@ -157,22 +157,9 @@ export default function Footer() {
                   </svg>
                 </a>
 
-                {/* TikTok */}
-                <a
-                  href="https://tiktok.com/@hurghadahabibi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="TikTok"
-                  className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.07] text-gray-400 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-[#1A1A1A] hover:text-white hover:shadow-lg hover:shadow-white/10"
-                >
-                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.43v-7.15a8.16 8.16 0 005.58 2.18v-3.45a4.85 4.85 0 01-1.42-.22 4.83 4.83 0 01-2.36-1.63V6.69h3.78z" />
-                  </svg>
-                </a>
-
                 {/* Snapchat */}
                 <a
-                  href="https://snapchat.com/add/hurghadahabibi"
+                  href="https://www.snapchat.com/@hurghadahabibi"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Snapchat"
