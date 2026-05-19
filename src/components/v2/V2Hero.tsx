@@ -35,7 +35,7 @@ export default function V2Hero() {
     const params = new URLSearchParams();
     if (destination) params.set("destination", destination);
     if (date) params.set("date", date);
-    router.push(`/recherche?${params.toString()}`);
+    router.push(`/v2/recherche?${params.toString()}`);
   };
 
   return (

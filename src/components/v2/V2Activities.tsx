@@ -2,6 +2,7 @@
 
 import { useRef, useState, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { activities, getFeaturedActivities } from "@/data/activities";
 import { getWhatsAppUrl } from "@/data/contact";
 
@@ -130,6 +131,7 @@ export default function V2Activities() {
                 key={activity.id}
                 className="w-[260px] sm:w-[280px] flex-none snap-center bg-[#1A1A1A] rounded-2xl overflow-hidden border border-white/5 hover:border-[#FFD700]/30 transition-all duration-300 group/card"
               >
+              <Link href={`/v2/activite/${activity.slug}`} className="block">
                 {/* Image */}
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
@@ -172,15 +174,11 @@ export default function V2Activities() {
                     {renderStars(activity.rating)}
                     <span className="text-gray-500 text-xs">({activity.reviewCount})</span>
                   </div>
-                  <a
-                    href={getWhatsAppUrl(`Bonjour, je souhaite réserver : ${activity.title} (${activity.price}€)`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 block text-center bg-[#FFD700] text-black rounded-full py-2.5 font-bold text-sm tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-[#FFD700]/25 hover:scale-[1.02] active:scale-95"
-                  >
-                    R&eacute;server
-                  </a>
+                  <span className="mt-2 block text-center bg-[#FFD700]/10 text-[#FFD700] rounded-full py-2 font-semibold text-sm tracking-wide">
+                    Voir les détails →
+                  </span>
                 </div>
+              </Link>
               </div>
             ))}
           </div>
