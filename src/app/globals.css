@@ -329,6 +329,15 @@ body {
   display: none;
 }
 
+/* Date input — cache le texte natif quand vide, le montre quand rempli */
+.date-input::-webkit-datetime-edit {
+  color: inherit;
+}
+
+.text-transparent::-webkit-datetime-edit {
+  color: transparent;
+}
+
 /* Wave divider base */
 .wave-divider {
   position: absolute;
