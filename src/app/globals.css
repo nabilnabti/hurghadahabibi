@@ -21,6 +21,16 @@
   --warm-dark: #FFF8F0;
   --peach: #FFF0E6;
   --font-playfair: var(--font-playfair);
+
+  /* V2 Party Theme */
+  --v2-yellow: #FFD700;
+  --v2-yellow-alt: #FFC107;
+  --v2-gold: #D4AF37;
+  --v2-black: #0A0A0A;
+  --v2-dark: #111111;
+  --v2-dark-card: #1A1A1A;
+  --v2-neon-pink: #FF1493;
+  --v2-neon-blue: #00D4FF;
 }
 
 @theme inline {
