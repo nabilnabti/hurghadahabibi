@@ -29,30 +29,46 @@ export default function HeroSection() {
         priority
       />
 
-      {/* Warm gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-[#1A1A1A]/70" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#E8461C]/10 via-transparent to-[#4AABE0]/10" />
+      {/* Warm gradient overlay — plus sombre pour lisibilité */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70" />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-32 text-center">
         {/* Main heading */}
-        <h1
-          className="font-display text-shadow-lg animate-fade-in-up mb-6 md:mb-8"
-        >
-          <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.1] tracking-tight">
+        <h1 className="font-display animate-fade-in-up mb-6 md:mb-8">
+          <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight drop-shadow-lg">
             Vivez l&apos;aventure
           </span>
-          <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] tracking-tight mt-2 gradient-text-orange" style={{ WebkitTextFillColor: 'unset', color: 'transparent', backgroundImage: 'linear-gradient(135deg, #E8461C, #FF6B42, #E8461C)', WebkitBackgroundClip: 'text', backgroundClip: 'text' }}>
-            a Hurghada
+          <span className="relative inline-block mt-2">
+            <span className="relative z-10 block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight drop-shadow-lg">
+              à Hurghada
+            </span>
+            {/* Animated stabilo highlight — street art style, en boucle */}
+            <span
+              className="absolute bottom-0 sm:bottom-1 left-[-6px] right-[-6px] h-[48%] opacity-80 animate-[stabilo_3s_ease-in-out_infinite]"
+              style={{
+                background: 'linear-gradient(92deg, #E8461C 0%, #FF6B42 40%, #E8461C 70%, #FF6B42 100%)',
+                transform: 'skewX(-2deg)',
+                borderRadius: '4px 2px 6px 2px',
+                filter: 'url(#rough)',
+              }}
+            />
+            {/* SVG filter for rough/hand-drawn edges */}
+            <svg className="absolute w-0 h-0">
+              <filter id="rough">
+                <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="4" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+              </filter>
+            </svg>
           </span>
         </h1>
 
         {/* Subtitle */}
         <p
-          className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-2xl mx-auto mb-10 md:mb-14 animate-fade-in-up tracking-wide font-light"
+          className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-xl mx-auto mb-8 md:mb-12 animate-fade-in-up tracking-wide font-light drop-shadow-md"
           style={{ animationDelay: "0.2s", animationFillMode: "both" }}
         >
-          Decouvrez les meilleures excursions et experiences
+          Découvrez les meilleures excursions et expériences
           <br className="hidden sm:block" />
           avec des guides 100% francophones
         </p>
