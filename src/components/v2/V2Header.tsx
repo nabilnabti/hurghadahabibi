@@ -7,9 +7,13 @@ import { getWhatsAppUrl } from "@/data/contact";
 const WHATSAPP_URL = getWhatsAppUrl("Yo ! Je veux réserver une expérience à Hurghada 🎉");
 
 const navLinks = [
-  { label: "Accueil", href: "#" },
-  { label: "Expériences", href: "#experiences" },
-  { label: "Contact", href: "#contact" },
+  { label: "Accueil", href: "/v2" },
+  { label: "Activités", href: "/v2/toutes-nos-activites" },
+  { label: "Excursions", href: "/v2/excursions" },
+  { label: "Aquatique", href: "/v2/activites-aquatiques" },
+  { label: "Aventures", href: "/v2/exploration-bien-etre" },
+  { label: "À propos", href: "/v2/a-propos" },
+  { label: "Contact", href: "/v2/contact" },
 ];
 
 export default function V2Header() {
@@ -45,15 +49,15 @@ export default function V2Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
               className="text-white/90 text-sm uppercase tracking-widest font-medium hover:text-[#FFD700] transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#FFD700] hover:after:w-full after:transition-all after:duration-300"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
 
           {/* CTA Button */}
@@ -93,22 +97,22 @@ export default function V2Header() {
 
       {/* Mobile Overlay Menu */}
       <div
-        className={`fixed inset-0 bg-[#0A0A0A]/98 backdrop-blur-xl flex flex-col items-center justify-center gap-8 transition-all duration-500 md:hidden ${
+        className={`fixed inset-0 top-0 bg-[#0A0A0A]/98 backdrop-blur-xl flex flex-col items-center pt-24 pb-10 gap-5 overflow-y-auto transition-all duration-500 md:hidden ${
           mobileOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         }`}
       >
         {navLinks.map((link, i) => (
-          <a
+          <Link
             key={link.label}
             href={link.href}
             onClick={() => setMobileOpen(false)}
-            className="font-[family-name:var(--font-bebas)] text-4xl text-white tracking-wider hover:text-[#FFD700] transition-all duration-300"
-            style={{ transitionDelay: mobileOpen ? `${i * 80}ms` : "0ms" }}
+            className="font-[family-name:var(--font-bebas)] text-3xl text-white tracking-wider hover:text-[#FFD700] transition-all duration-300"
+            style={{ transitionDelay: mobileOpen ? `${i * 60}ms` : "0ms" }}
           >
             {link.label}
-          </a>
+          </Link>
         ))}
         <a
           href={WHATSAPP_URL}

@@ -20,9 +20,9 @@ export default function V2Page() {
     <>
       <V2Header />
       <V2Hero />
+      <V2Activities />
       <V2Categories />
       <V2Services />
-      <V2Activities />
       <V2VideoReviews />
       <V2Stats />
       <V2CTA />
