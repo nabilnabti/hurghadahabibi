@@ -237,6 +237,7 @@ export default async function V2ActivityPage({
                       price={activity.price}
                       childPrice={activity.childPrice}
                       variant="sidebar"
+                      theme="dark"
                     />
                   </Suspense>
                 </div>
@@ -279,6 +280,7 @@ export default async function V2ActivityPage({
             price={activity.price}
             childPrice={activity.childPrice}
             variant="mobile"
+            theme="dark"
           />
         </Suspense>
         <div className="h-28 lg:hidden" />
