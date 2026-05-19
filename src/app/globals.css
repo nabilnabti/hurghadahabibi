@@ -329,13 +329,11 @@ body {
   display: none;
 }
 
-/* Date input — cache le texte natif quand vide, le montre quand rempli */
-.date-input::-webkit-datetime-edit {
-  color: inherit;
-}
-
-.text-transparent::-webkit-datetime-edit {
-  color: transparent;
+/* Date input — iOS fix */
+input[type="date"] {
+  -webkit-appearance: none;
+  min-height: 56px;
+  font-size: 16px !important;
 }
 
 /* Wave divider base */

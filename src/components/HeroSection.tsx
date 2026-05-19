@@ -114,8 +114,8 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Date input — toujours type="date" pour iOS */}
-            <div className="flex-1 relative">
+            {/* Date input */}
+            <div className="flex-1 relative min-h-[56px]">
               <div className="absolute left-4 top-1/2 -translate-y-1/2 text-[#4AABE0] pointer-events-none z-10">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
@@ -125,7 +125,7 @@ export default function HeroSection() {
                 </svg>
               </div>
               {!date && (
-                <span className="absolute left-12 top-1/2 -translate-y-1/2 text-gray-400 text-sm sm:text-base pointer-events-none z-10">
+                <span className="absolute inset-0 flex items-center pl-12 text-gray-400 text-sm sm:text-base pointer-events-none z-10">
                   Date du séjour
                 </span>
               )}
@@ -133,7 +133,8 @@ export default function HeroSection() {
                 type="date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-                className={`w-full h-14 pl-12 pr-4 bg-gray-50/80 text-sm sm:text-base rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#4AABE0]/30 border border-gray-200/60 transition-all duration-300 hover:border-[#4AABE0]/30 cursor-pointer date-input ${date ? "text-gray-900" : "text-transparent"}`}
+                className="absolute inset-0 w-full h-full pl-12 pr-4 bg-gray-50/80 text-sm sm:text-base rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#4AABE0]/30 border border-gray-200/60 transition-all duration-300 hover:border-[#4AABE0]/30 cursor-pointer"
+                style={{ color: date ? '#111827' : 'transparent', fontSize: '16px' }}
               />
             </div>
 
