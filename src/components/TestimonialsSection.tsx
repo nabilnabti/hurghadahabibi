@@ -1,12 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 
 // Couleurs variées pour les avatars
 const avatarColors = [
-  "E8461C", "4AABE0", "2D8BC4", "34A853", "EA4335",
-  "FBBC05", "9333EA", "E11D48", "0EA5E9", "F97316",
+  "#E8461C", "#4AABE0", "#2D8BC4", "#34A853", "#EA4335",
+  "#FBBC05", "#9333EA", "#E11D48", "#0EA5E9", "#F97316",
 ];
 
 const testimonials = [
@@ -228,13 +227,12 @@ export default function TestimonialsSection() {
 
                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                   <div className="flex items-center gap-3">
-                    <Image
-                      src={`https://ui-avatars.com/api/?name=${encodeURIComponent(t.name)}&background=${avatarColors[i % avatarColors.length]}&color=fff&size=80&bold=true&format=svg`}
-                      alt={t.name}
-                      width={40}
-                      height={40}
-                      className="w-10 h-10 rounded-full shadow-sm"
-                    />
+                    <div
+                      className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-sm shrink-0"
+                      style={{ backgroundColor: avatarColors[i % avatarColors.length] }}
+                    >
+                      {t.name.split(" ").map(n => n[0]).join("")}
+                    </div>
                     <div>
                       <div className="font-semibold text-[#1A1A1A] text-sm">
                         {t.name}
